@@ -1,0 +1,73 @@
+$def with (journey, finalresults)
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>$journey</title>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript" src="webtoolkit.sortabletable.js"></script>
+<style> 
+body
+{
+background:url(OpenRoadUSA.jpg);
+background-repeat:no-repeat;
+}
+</style> 
+    <style>
+        table {
+            text-align: center;
+            font-size: 12px;
+            font-family: verdana;
+            background: #c0c0c0;
+        }
+ 
+        table thead  {
+            cursor: pointer;
+        }
+ 
+        table thead tr,
+        table tfoot tr {
+            background: #c0c0c0;
+        }
+ 
+        table tbody tr {
+            background: #f0f0f0;
+        }
+ 
+        td, th {
+            border: 1px solid white;
+        }
+    </style>
+</head>
+ 
+<body>
+<h1>$journey</h1>
+<table cellspacing="1" cellpadding="2" class="" id="myTable" width="400">
+    <thead>
+        <tr>
+            <th class="c1">Start Time</th>
+            <th class="c2">End Time</th>
+            <th class="c3">Fare</th>
+			<th class="c4">Link</th>
+        </tr>
+    </thead>
+ 
+    <tbody>
+$for result in finalresults:
+        <tr class="r1">
+            <td class="c1">$result.start_time</th>
+            <td class="c2">$result.end_time</th>
+            <td class="c3">$result.fare</th>
+			<td class="c4">$result.hyperlink</th>
+        </tr>
+    </tbody>
+ 
+</table>
+ 
+<script type="text/javascript">
+var t = new SortableTable(document.getElementById('myTable'), 100);
+</script>
+ 
+</body>
+</html>
+

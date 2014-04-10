@@ -1,0 +1,65 @@
+$def with (finalresults)
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Results</title>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript" src="webtoolkit.sortabletable.js"></script>
+ 
+    <style>
+        table {
+            text-align: center;
+            font-size: 12px;
+            font-family: verdana;
+            background: #c0c0c0;
+        }
+ 
+        table thead  {
+            cursor: pointer;
+        }
+ 
+        table thead tr,
+        table tfoot tr {
+            background: #c0c0c0;
+        }
+ 
+        table tbody tr {
+            background: #f0f0f0;
+        }
+ 
+        td, th {
+            border: 1px solid white;
+        }
+    </style>
+</head>
+ 
+<body>
+ 
+<table cellspacing="1" cellpadding="2" class="" id="myTable" width="400">
+    <thead>
+        <tr>
+            <th class="c1">Name</th>
+            <th class="c2">Surname</th>
+            <th class="c3">Age</th>
+        </tr>
+    </thead>
+ 
+    <tbody>
+$for i in range(0, len(finalresults)):
+        <tr class="r1">
+            <td class="c1">$finalresults[$i].start_time</th>
+            <td class="c2">$finalresults[$i].end_time</th>
+            <td class="c3">$finalresults[$i].fare</th>
+        </tr>
+    </tbody>
+ 
+</table>
+ 
+<script type="text/javascript">
+var t = new SortableTable(document.getElementById('myTable'), 100);
+</script>
+ 
+</body>
+</html>
+
